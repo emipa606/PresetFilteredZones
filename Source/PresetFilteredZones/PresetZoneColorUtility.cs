@@ -83,7 +83,6 @@ namespace PresetFilteredZones {
       mealZonePalette = Dilute(new List<Color>() {
         ColorLibrary.Purple,
         ColorLibrary.Violet,
-        ColorLibrary.LightPurple,
         ColorLibrary.DeepPurple,
         ColorLibrary.RoyalPurple,
         ColorLibrary.Plum,
@@ -99,9 +98,7 @@ namespace PresetFilteredZones {
     private static void PaintMedZone() {
       medZonePalette = Dilute(new List<Color>() {
         ColorLibrary.Blue,
-        ColorLibrary.SkyBlue,
         ColorLibrary.BabyBlue,
-        ColorLibrary.PaleBlue,
         ColorLibrary.Navy,
         ColorLibrary.Aquamarine,
         ColorLibrary.BrightBlue,
@@ -133,14 +130,11 @@ namespace PresetFilteredZones {
     private static void PaintVegZone() {
       vegZonePalette = Dilute(new List<Color>() {
         ColorLibrary.Green,
-        ColorLibrary.LightGreen,
         ColorLibrary.PastelGreen,
-        ColorLibrary.Mint,
         ColorLibrary.PeaGreen,
         ColorLibrary.PukeGreen,
         ColorLibrary.GrassGreen,
         ColorLibrary.OliveGreen,
-        ColorLibrary.PaleGreen,
         ColorLibrary.ForestGreen,
         ColorLibrary.DarkGreen
       });
@@ -164,12 +158,7 @@ namespace PresetFilteredZones {
       animalZonePalette = Dilute(new List<Color>() {
         ColorLibrary.Brown,
         ColorLibrary.Leather,
-        ColorLibrary.DarkBrown,
-        ColorLibrary.Taupe,
-        ColorLibrary.Khaki,
-        ColorLibrary.LightBrown,
-        ColorLibrary.Beige,
-        ColorLibrary.Olive
+        ColorLibrary.DarkBrown
       });
     }
   }
