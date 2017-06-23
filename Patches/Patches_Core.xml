@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+
+	<Operation Class="PatchOperationSequence">
+		<success>Always</success>
+		<Operations>
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/DesignationCategoryDef[DefName="Zone"]/specialDesignatorClasses</xpath>
+				<value>
+					<li>PresetFilteredZones.Designator_MealZoneAdd</li>
+				</value>
+				<order>Append</order>
+			</li>
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/DesignationCategoryDef[DefName="Zone"]/specialDesignatorClasses</xpath>
+				<value>
+					<li>PresetFilteredZones.Designator_MedZoneAdd</li>
+				</value>
+				<order>Append</order>
+			</li>
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/DesignationCategoryDef[DefName="Zone"]/specialDesignatorClasses</xpath>
+				<value>
+					<li>PresetFilteredZones.Designator_MeatZoneAdd</li>
+				</value>
+				<order>Append</order>
+			</li>
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/DesignationCategoryDef[DefName="Zone"]/specialDesignatorClasses</xpath>
+				<value>
+					<li>PresetFilteredZones.Designator_VegZoneAdd</li>
+				</value>
+				<order>Append</order>
+			</li>
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/DesignationCategoryDef[DefName="Zone"]/specialDesignatorClasses</xpath>
+				<value>
+					<li>PresetFilteredZones.Designator_JoyZoneAdd</li>
+				</value>
+				<order>Append</order>
+			</li>
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/DesignationCategoryDef[DefName="Zone"]/specialDesignatorClasses</xpath>
+				<value>
+					<li>PresetFilteredZones.Designator_AnimalZoneAdd</li>
+				</value>
+				<order>Append</order>
+			</li>
+		</Operations>
+	</Operation>
+
+</Patch>

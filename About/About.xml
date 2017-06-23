@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ModMetaData>
+  <name>Preset Filtered Zones</name>
+  <author>cuproPanda</author>
+  <url>https://ludeon.com/forums/index.php?topic=13400.0</url>
+  <targetVersion>0.17.0</targetVersion>
+  <description>Adds six new stockpile zones which are already filtered for storing Meals, Meat, Vegetables, Medicine, Joy, or Animals. Freezer creation is a breeze!</description>
+</ModMetaData>
