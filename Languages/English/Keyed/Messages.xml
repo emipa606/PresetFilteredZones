@@ -7,5 +7,7 @@
 	<FZN_DescriptionVegZone>A preset stockpile for storing rottable vegetables.</FZN_DescriptionVegZone>
 	<FZN_DescriptionJoyZone>A preset stockpile for storing all joy consumables.</FZN_DescriptionJoyZone>
 	<FZN_DescriptionAnimalZone>A preset stockpile for storing dead animals before being butchered.</FZN_DescriptionAnimalZone>
+	<FZN_GizmoShadeLabel>Change Shade</FZN_GizmoShadeLabel>
+	<FZN_GizmoShadeDesc>Change the shade of this stockpile.</FZN_GizmoShadeDesc>
 
 </LanguageData>

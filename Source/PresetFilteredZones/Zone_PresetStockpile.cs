@@ -89,6 +89,7 @@ namespace PresetFilteredZones {
       if (Scribe.mode == LoadSaveMode.PostLoadInit) {
         slotGroup = new SlotGroup(this);
       }
+      Scribe_Values.Look(ref zoneType, "zoneType", PresetZoneType.None);
     }
 
 
@@ -123,6 +124,19 @@ namespace PresetFilteredZones {
 
 
     public override IEnumerable<Gizmo> GetGizmos() {
+      //yield return new Command_Action() {
+      //  icon = GizmoShadeFor(zoneType),
+      //  defaultLabel = Static.GizmoShadeLabel,
+      //  defaultDesc = Static.GizmoShadeDesc,
+      //  activateSound = SoundDefOf.Click,
+      //  action = () => {
+      //    color = NextZoneColor;
+      //    for (int c = 0; c < Cells.Count; c++) {
+      //      Map.mapDrawer.MapMeshDirty(Cells[c], MapMeshFlag.Zone);
+      //    }
+      //  }
+      //};
+
       foreach (Gizmo giz in base.GetGizmos()) {
         yield return giz;
       }
@@ -177,5 +191,29 @@ namespace PresetFilteredZones {
 
     public void Notify_LostThing(Thing newItem) {
     }
+
+
+    //public static Texture2D GizmoShadeFor(PresetZoneType type) {
+    //  if (type == PresetZoneType.Meal) {
+    //    return Static.GizmoShadeMeal;
+    //  }
+    //  if (type == PresetZoneType.Med) {
+    //    return Static.GizmoShadeMed;
+    //  }
+    //  if (type == PresetZoneType.Meat) {
+    //    return Static.GizmoShadeMeat;
+    //  }
+    //  if (type == PresetZoneType.Veg) {
+    //    return Static.GizmoShadeVeg;
+    //  }
+    //  if (type == PresetZoneType.Joy) {
+    //    return Static.GizmoShadeJoy;
+    //  }
+    //  if (type == PresetZoneType.Animal) {
+    //    return Static.GizmoShadeAnimal;
+    //  }
+
+    //  return BaseContent.BadTex;
+    //}
   }
 }
