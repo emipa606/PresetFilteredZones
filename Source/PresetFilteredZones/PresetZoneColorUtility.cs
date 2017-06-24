@@ -7,18 +7,20 @@ namespace PresetFilteredZones {
 
   public enum PresetZoneType {
     None,
-    [Description("Frozen Meals")]
+    [Description("Meal Stockpile")]
     Meal,
-    [Description("Frozen Meat")]
+    [Description("Meat StockPile")]
     Meat,
-    [Description("Frozen Veg")]
+    [Description("Veg Stockpile")]
     Veg,
     [Description("Medicine Stockpile")]
     Med,
     [Description("Joy Stockpile")]
     Joy,
-    [Description("Frozen Animals")]
-    Animal
+    [Description("Animal Stockpile")]
+    Animal,
+    [Description("Outdoor Stockpile")]
+    Outdoor
   }
 
 
@@ -33,6 +35,7 @@ namespace PresetFilteredZones {
     private static List<Color> vegZonePalette;
     private static List<Color> joyZonePalette;
     private static List<Color> animalZonePalette;
+    private static List<Color> outdoorZonePalette;
 
 
     static PresetZoneColorUtility() {
@@ -42,6 +45,7 @@ namespace PresetFilteredZones {
       PaintVegZone();
       PaintJoyZone();
       PaintAnimalZone();
+      PaintOutdoorZone();
     }
 
 
@@ -63,6 +67,9 @@ namespace PresetFilteredZones {
       }
       if (type == PresetZoneType.Animal) {
         return animalZonePalette.RandomElement();
+      }
+      if (type == PresetZoneType.Outdoor) {
+        return outdoorZonePalette.RandomElement();
       }
 
       return ColorLibrary.Grey;
@@ -160,6 +167,15 @@ namespace PresetFilteredZones {
         ColorLibrary.Leather,
         ColorLibrary.DarkBrown
       });
+    }
+
+
+    private static void PaintOutdoorZone() {
+      outdoorZonePalette = new List<Color>();
+      for (int c = 0; c < mealZonePalette.Count; c++) {
+        float v = mealZonePalette[c].grayscale;
+        outdoorZonePalette.Add(new Color(v, v, v, ZoneOpacity));
+      }
     }
   }
 }

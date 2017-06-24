@@ -46,6 +46,7 @@
     <Compile Include="Designator_MealZoneAdd.cs" />
     <Compile Include="Designator_MeatZoneAdd.cs" />
     <Compile Include="Designator_MedZoneAdd.cs" />
+    <Compile Include="Designator_OutdoorZoneAdd.cs" />
     <Compile Include="Designator_PresetZoneAdd.cs" />
     <Compile Include="Designator_VegZoneAdd.cs" />
     <Compile Include="PresetZoneColorUtility.cs" />

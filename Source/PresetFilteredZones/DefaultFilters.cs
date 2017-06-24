@@ -31,7 +31,6 @@ namespace PresetFilteredZones {
 
 
     public static ThingFilter DefaultFilter_MedZone() {
-      List<ThingDef> database = DefDatabase<ThingDef>.AllDefsListForReading;
       ThingFilter filter = new ThingFilter();
       filter.SetDisallowAll();
 
@@ -61,7 +60,9 @@ namespace PresetFilteredZones {
       filter.SetDisallowAll();
 
       for (int t = 0; t < database.Count; t++) {
-        if (database[t].comps.Any(c => c is CompProperties_Rottable) && database[t].IsIngestible && ((database[t].ingestible.foodType & FoodTypeFlags.VegetableOrFruit) != 0)) {
+        if (database[t].comps.Any(c => c is CompProperties_Rottable) && database[t].IsIngestible && (
+          ((database[t].ingestible.foodType & FoodTypeFlags.VegetableOrFruit) != 0)) ||
+          ((database[t].ingestible.foodType & FoodTypeFlags.Seed) != 0)){
           filter.SetAllow(database[t], true);
         }
       }
@@ -90,6 +91,24 @@ namespace PresetFilteredZones {
       filter.SetAllow(ThingCategoryDefOf.CorpsesAnimal, true);
       filter.SetAllow(ThingCategoryDefOf.CorpsesInsect, false);
       filter.SetAllow(SpecialThingFilterDef.Named("AllowRotten"), false);
+      return filter;
+    }
+
+
+    public static ThingFilter DefaultFilter_OutdoorZone() {
+      List<ThingDef> list = new List<ThingDef>();
+      ThingFilter filter = new ThingFilter();
+      filter.SetDisallowAll();
+
+      list.AddRange(ThingCategoryDefOf.ResourcesRaw.DescendantThingDefs);
+      list.AddRange(ThingCategoryDefOf.Items.DescendantThingDefs);
+
+      for (int t = 0; t < list.Count; t++) {
+        if (list[t].GetStatValueAbstract(StatDefOf.DeteriorationRate) == 0 && !list[t].comps.Any(c => c is CompProperties_Rottable) && !list[t].IsIngestible) {
+          filter.SetAllow(list[t], true);
+        }
+      }
+
       return filter;
     }
   }

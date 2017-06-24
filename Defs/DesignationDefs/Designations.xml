@@ -36,5 +36,11 @@
 		<texturePath>Cupro/UI/ZoneCreate_StockpileAnimal</texturePath>
 		<targetType>Cell</targetType>
 	</DesignationDef>
+	
+	<DesignationDef>
+		<defName>FZN_Designator_OutdoorZoneAdd</defName>
+		<texturePath>Cupro/UI/ZoneCreate_StockpileOutdoor</texturePath>
+		<targetType>Cell</targetType>
+	</DesignationDef>
 
 </DesignationDefs>

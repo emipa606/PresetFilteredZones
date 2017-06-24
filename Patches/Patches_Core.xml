@@ -46,6 +46,13 @@
 				</value>
 				<order>Append</order>
 			</li>
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/DesignationCategoryDef[DefName="Zone"]/specialDesignatorClasses</xpath>
+				<value>
+					<li>PresetFilteredZones.Designator_OutdoorZoneAdd</li>
+				</value>
+				<order>Append</order>
+			</li>
 		</Operations>
 	</Operation>
 
