@@ -61,8 +61,8 @@ namespace PresetFilteredZones {
 
       for (int t = 0; t < database.Count; t++) {
         if (database[t].comps.Any(c => c is CompProperties_Rottable) && database[t].IsIngestible && (
-          ((database[t].ingestible.foodType & FoodTypeFlags.VegetableOrFruit) != 0)) ||
-          ((database[t].ingestible.foodType & FoodTypeFlags.Seed) != 0)){
+          ((database[t].ingestible.foodType & FoodTypeFlags.VegetableOrFruit) != 0) ||
+          ((database[t].ingestible.foodType & FoodTypeFlags.Seed) != 0))){
           filter.SetAllow(database[t], true);
         }
       }
