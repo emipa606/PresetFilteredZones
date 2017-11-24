@@ -42,6 +42,7 @@
   <ItemGroup>
     <Compile Include="DefaultFilters.cs" />
     <Compile Include="Designator_AnimalZoneAdd.cs" />
+    <Compile Include="Designator_IndoorZoneAdd.cs" />
     <Compile Include="Designator_JoyZoneAdd.cs" />
     <Compile Include="Designator_MealZoneAdd.cs" />
     <Compile Include="Designator_MeatZoneAdd.cs" />

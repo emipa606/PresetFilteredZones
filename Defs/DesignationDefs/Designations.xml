@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<DesignationDefs>
+<Defs>
 
 	<DesignationDef>
 		<defName>FZN_Designator_MealZoneAdd</defName>
@@ -42,5 +42,11 @@
 		<texturePath>Cupro/UI/ZoneCreate_StockpileOutdoor</texturePath>
 		<targetType>Cell</targetType>
 	</DesignationDef>
+	
+	<DesignationDef>
+		<defName>FZN_Designator_IndoorZoneAdd</defName>
+		<texturePath>Cupro/UI/ZoneCreate_StockpileIndoor</texturePath>
+		<targetType>Cell</targetType>
+	</DesignationDef>
 
-</DesignationDefs>
+</Defs>

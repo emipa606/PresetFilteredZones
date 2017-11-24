@@ -20,8 +20,10 @@ namespace PresetFilteredZones {
     [Description("Animal Stockpile")]
     Animal,
     [Description("Outdoor Stockpile")]
-    Outdoor
-  }
+    Outdoor,
+		[Description("Indoor Stockpile")]
+		Indoor
+	}
 
 
 
@@ -68,7 +70,7 @@ namespace PresetFilteredZones {
       if (type == PresetZoneType.Animal) {
         return animalZonePalette.RandomElement();
       }
-      if (type == PresetZoneType.Outdoor) {
+      if (type == PresetZoneType.Outdoor || type == PresetZoneType.Indoor) {
         return outdoorZonePalette.RandomElement();
       }
 

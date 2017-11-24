@@ -7,7 +7,8 @@
 	<FZN_DescriptionVegZone>A preset stockpile for storing rottable vegetables.</FZN_DescriptionVegZone>
 	<FZN_DescriptionJoyZone>A preset stockpile for storing all joy consumables.</FZN_DescriptionJoyZone>
 	<FZN_DescriptionAnimalZone>A preset stockpile for storing dead animals before being butchered.</FZN_DescriptionAnimalZone>
-	<FZN_DescriptionOutdoorZone>A preset stockpile for storing resources that don't need to be indoors.</FZN_DescriptionOutdoorZone>
+	<FZN_DescriptionOutdoorZone>A preset stockpile for storing resources that won't deteriorate outdoors.</FZN_DescriptionOutdoorZone>
+	<FZN_DescriptionIndoorZone>A preset stockpile for storing resources that will deteriorate outdoors.</FZN_DescriptionIndoorZone>
 	
 	<FZN_GizmoShadeLabel>Change Shade</FZN_GizmoShadeLabel>
 	<FZN_GizmoShadeDesc>Change the shade of this stockpile.</FZN_GizmoShadeDesc>

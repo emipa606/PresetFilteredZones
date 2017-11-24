@@ -66,7 +66,7 @@ namespace PresetFilteredZones {
           filter.SetAllow(database[t], true);
         }
       }
-      return filter;
+			return filter;
     }
 
 
@@ -111,5 +111,26 @@ namespace PresetFilteredZones {
 
       return filter;
     }
-  }
+
+
+		public static ThingFilter DefaultFilter_IndoorZone() {
+			List<ThingDef> database = DefDatabase<ThingDef>.AllDefsListForReading;
+			ThingFilter filter = new ThingFilter();
+			filter.SetDisallowAll();
+
+			for (int t = 0; t < database.Count; t++) {
+				if (database[t].GetStatValueAbstract(StatDefOf.DeteriorationRate) > 0) {
+					filter.SetAllow(database[t], true);
+				}
+			}
+			filter.SetAllow(ThingCategoryDefOf.Corpses, false);
+			filter.SetAllow(SpecialThingFilterDef.Named("AllowRotten"), false);
+			filter.SetAllow(SpecialThingFilterDef.Named("AllowPlantFood"), true);
+			filter.SetAllow(SpecialThingFilterDef.Named("AllowNonDeadmansApparel"), true);
+			filter.SetAllow(SpecialThingFilterDef.Named("AllowSmeltable"), true);
+			filter.SetAllow(SpecialThingFilterDef.Named("AllowNonSmeltableWeapons"), true);
+
+			return filter;
+		}
+	}
 }

@@ -3,57 +3,64 @@
 
 	<Operation Class="PatchOperationSequence">
 		<success>Always</success>
-		<Operations>
+		<operations>
 			<li Class="PatchOperationAdd">
-				<xpath>/Defs/DesignationCategoryDef[DefName="Zone"]/specialDesignatorClasses</xpath>
+				<xpath>/Defs/DesignationCategoryDef[defName="Zone"]/specialDesignatorClasses</xpath>
 				<value>
 					<li>PresetFilteredZones.Designator_MealZoneAdd</li>
 				</value>
 				<order>Append</order>
 			</li>
 			<li Class="PatchOperationAdd">
-				<xpath>/Defs/DesignationCategoryDef[DefName="Zone"]/specialDesignatorClasses</xpath>
+				<xpath>/Defs/DesignationCategoryDef[defName="Zone"]/specialDesignatorClasses</xpath>
 				<value>
 					<li>PresetFilteredZones.Designator_MedZoneAdd</li>
 				</value>
 				<order>Append</order>
 			</li>
 			<li Class="PatchOperationAdd">
-				<xpath>/Defs/DesignationCategoryDef[DefName="Zone"]/specialDesignatorClasses</xpath>
+				<xpath>/Defs/DesignationCategoryDef[defName="Zone"]/specialDesignatorClasses</xpath>
 				<value>
 					<li>PresetFilteredZones.Designator_MeatZoneAdd</li>
 				</value>
 				<order>Append</order>
 			</li>
 			<li Class="PatchOperationAdd">
-				<xpath>/Defs/DesignationCategoryDef[DefName="Zone"]/specialDesignatorClasses</xpath>
+				<xpath>/Defs/DesignationCategoryDef[defName="Zone"]/specialDesignatorClasses</xpath>
 				<value>
 					<li>PresetFilteredZones.Designator_VegZoneAdd</li>
 				</value>
 				<order>Append</order>
 			</li>
 			<li Class="PatchOperationAdd">
-				<xpath>/Defs/DesignationCategoryDef[DefName="Zone"]/specialDesignatorClasses</xpath>
+				<xpath>/Defs/DesignationCategoryDef[defName="Zone"]/specialDesignatorClasses</xpath>
 				<value>
 					<li>PresetFilteredZones.Designator_JoyZoneAdd</li>
 				</value>
 				<order>Append</order>
 			</li>
 			<li Class="PatchOperationAdd">
-				<xpath>/Defs/DesignationCategoryDef[DefName="Zone"]/specialDesignatorClasses</xpath>
+				<xpath>/Defs/DesignationCategoryDef[defName="Zone"]/specialDesignatorClasses</xpath>
 				<value>
 					<li>PresetFilteredZones.Designator_AnimalZoneAdd</li>
 				</value>
 				<order>Append</order>
 			</li>
 			<li Class="PatchOperationAdd">
-				<xpath>/Defs/DesignationCategoryDef[DefName="Zone"]/specialDesignatorClasses</xpath>
+				<xpath>/Defs/DesignationCategoryDef[defName="Zone"]/specialDesignatorClasses</xpath>
 				<value>
 					<li>PresetFilteredZones.Designator_OutdoorZoneAdd</li>
 				</value>
 				<order>Append</order>
 			</li>
-		</Operations>
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/DesignationCategoryDef[defName="Zone"]/specialDesignatorClasses</xpath>
+				<value>
+					<li>PresetFilteredZones.Designator_IndoorZoneAdd</li>
+				</value>
+				<order>Append</order>
+			</li>
+		</operations>
 	</Operation>
 
 </Patch>
