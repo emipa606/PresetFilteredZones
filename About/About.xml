@@ -1,8 +1,30 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <ModMetaData>
-  <name>Preset Filtered Zones</name>
+  <name>Preset Filtered Zones (Continued)</name>
+  <packageId>Mlie.PresetFilteredZones</packageId>
   <author>cuproPanda</author>
-  <url>https://ludeon.com/forums/index.php?topic=32190</url>
-  <targetVersion>0.18.0</targetVersion>
-  <description>Adds new stockpile zones which are already filtered for storing Meals, Meat, Vegetables, Medicine, Joy, Animals, etc. Storage creation is a breeze!</description>
+  <url>https://github.com/emipa606/PresetFilteredZones</url>
+  <supportedVersions>
+    <li>1.1</li>
+    <li>1.2</li>
+  </supportedVersions>
+  <modDependencies />
+  <loadAfter />
+  <description>[img]https://i.imgur.com/WAEzk68.png[/img]
+Update of cuproPandas mod
+https://steamcommunity.com/sharedfiles/filedetails/?id=
+
+- Included the [url=https://github.com/Proxyer/FZN]japanese translation[/url] by Proxyer
+
+[img]https://i.imgur.com/7Gzt3Rg.png[/img]
+
+[table]
+    [tr]
+        [td][url=https://invite.gg/Mlie][img]https://i.imgur.com/zdzzBrc.png[/img][/url][/td]
+        [td][url=https://github.com/emipa606/PresetFilteredZones][img]https://i.imgur.com/kTkpTOE.png[/img][/url][/td]
+    [/tr]
+[/table]
+	
+[img]https://i.imgur.com/NOW7jU1.png[/img]
+</description>
 </ModMetaData>

@@ -1,16 +1,13 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
-
-	<FZN_DescriptionMealZone>A preset stockpile for storing rottable meals.</FZN_DescriptionMealZone>
-	<FZN_DescriptionMedZone>A preset stockpile for storing all medicine.</FZN_DescriptionMedZone>
-	<FZN_DescriptionMeatZone>A preset stockpile for storing rottable meats.</FZN_DescriptionMeatZone>
-	<FZN_DescriptionVegZone>A preset stockpile for storing rottable vegetables.</FZN_DescriptionVegZone>
-	<FZN_DescriptionJoyZone>A preset stockpile for storing all joy consumables.</FZN_DescriptionJoyZone>
-	<FZN_DescriptionAnimalZone>A preset stockpile for storing dead animals before being butchered.</FZN_DescriptionAnimalZone>
-	<FZN_DescriptionOutdoorZone>A preset stockpile for storing resources that won't deteriorate outdoors.</FZN_DescriptionOutdoorZone>
-	<FZN_DescriptionIndoorZone>A preset stockpile for storing resources that will deteriorate outdoors.</FZN_DescriptionIndoorZone>
-	
-	<FZN_GizmoShadeLabel>Change Shade</FZN_GizmoShadeLabel>
-	<FZN_GizmoShadeDesc>Change the shade of this stockpile.</FZN_GizmoShadeDesc>
-
+  <FZN_DescriptionMealZone>A preset stockpile for storing rottable meals.</FZN_DescriptionMealZone>
+  <FZN_DescriptionMedZone>A preset stockpile for storing all medicine.</FZN_DescriptionMedZone>
+  <FZN_DescriptionMeatZone>A preset stockpile for storing rottable meats.</FZN_DescriptionMeatZone>
+  <FZN_DescriptionVegZone>A preset stockpile for storing rottable vegetables.</FZN_DescriptionVegZone>
+  <FZN_DescriptionJoyZone>A preset stockpile for storing all joy consumables.</FZN_DescriptionJoyZone>
+  <FZN_DescriptionAnimalZone>A preset stockpile for storing dead animals before being butchered.</FZN_DescriptionAnimalZone>
+  <FZN_DescriptionOutdoorZone>A preset stockpile for storing resources that won't deteriorate outdoors.</FZN_DescriptionOutdoorZone>
+  <FZN_DescriptionIndoorZone>A preset stockpile for storing resources that will deteriorate outdoors.</FZN_DescriptionIndoorZone>
+  <FZN_GizmoShadeLabel>Change Shade</FZN_GizmoShadeLabel>
+  <FZN_GizmoShadeDesc>Change the shade of this stockpile.</FZN_GizmoShadeDesc>
 </LanguageData>

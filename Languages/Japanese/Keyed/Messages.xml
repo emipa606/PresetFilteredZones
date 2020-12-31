@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <!-- <FZN_Designator_MealZoneAdd>食糧ゾーン</FZN_Designator_MealZoneAdd> -->
+  <!-- <FZN_Designator_MedZoneAdd>薬品ゾーン</FZN_Designator_MedZoneAdd> -->
+  <!-- <FZN_Designator_MeatZoneAdd>肉類ゾーン</FZN_Designator_MeatZoneAdd> -->
+  <!-- <FZN_Designator_VegZoneAdd>野菜ゾーン</FZN_Designator_VegZoneAdd> -->
+  <!-- <FZN_Designator_JoyZoneAdd>娯楽ゾーン</FZN_Designator_JoyZoneAdd> -->
+  <!-- <FZN_Designator_AnimalZoneAdd>獲物ゾーン</FZN_Designator_AnimalZoneAdd> -->
+  <FZN_DescriptionMealZone>腐敗する食糧を入れる為の備蓄ゾーン初期設定です。</FZN_DescriptionMealZone>
+  <FZN_DescriptionMedZone>全種類の薬品を入れる為の備蓄ゾーン初期設定です。</FZN_DescriptionMedZone>
+  <FZN_DescriptionMeatZone>腐敗する肉を入れる為の備蓄ゾーン初期設定です。</FZN_DescriptionMeatZone>
+  <FZN_DescriptionVegZone>腐敗する野菜を入れる為の備蓄ゾーン初期設定です。</FZN_DescriptionVegZone>
+  <FZN_DescriptionJoyZone>全ての娯楽用食品を入れる為の備蓄ゾーン初期設定です。</FZN_DescriptionJoyZone>
+  <FZN_DescriptionAnimalZone>解体する前の動物の死骸を入れる為の備蓄ゾーン初期設定です。</FZN_DescriptionAnimalZone>
+  <FZN_GizmoShadeLabel>シェード変更</FZN_GizmoShadeLabel>
+  <FZN_GizmoShadeDesc>備蓄ゾーンの色を変更します。</FZN_GizmoShadeDesc>
+</LanguageData>

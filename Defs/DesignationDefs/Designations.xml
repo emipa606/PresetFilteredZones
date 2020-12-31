@@ -1,52 +1,43 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Defs>
-
-	<DesignationDef>
-		<defName>FZN_Designator_MealZoneAdd</defName>
-		<texturePath>Cupro/UI/ZoneCreate_StockpileMeal</texturePath>
-		<targetType>Cell</targetType>
-	</DesignationDef>
-
-	<DesignationDef>
-		<defName>FZN_Designator_MedZoneAdd</defName>
-		<texturePath>Cupro/UI/ZoneCreate_StockpileMed</texturePath>
-		<targetType>Cell</targetType>
-	</DesignationDef>
-
-	<DesignationDef>
-		<defName>FZN_Designator_MeatZoneAdd</defName>
-		<texturePath>Cupro/UI/ZoneCreate_StockpileMeat</texturePath>
-		<targetType>Cell</targetType>
-	</DesignationDef>
-
-	<DesignationDef>
-		<defName>FZN_Designator_VegZoneAdd</defName>
-		<texturePath>Cupro/UI/ZoneCreate_StockpileVeg</texturePath>
-		<targetType>Cell</targetType>
-	</DesignationDef>
-
-	<DesignationDef>
-		<defName>FZN_Designator_JoyZoneAdd</defName>
-		<texturePath>Cupro/UI/ZoneCreate_StockpileJoy</texturePath>
-		<targetType>Cell</targetType>
-	</DesignationDef>
-
-	<DesignationDef>
-		<defName>FZN_Designator_AnimalZoneAdd</defName>
-		<texturePath>Cupro/UI/ZoneCreate_StockpileAnimal</texturePath>
-		<targetType>Cell</targetType>
-	</DesignationDef>
-	
-	<DesignationDef>
-		<defName>FZN_Designator_OutdoorZoneAdd</defName>
-		<texturePath>Cupro/UI/ZoneCreate_StockpileOutdoor</texturePath>
-		<targetType>Cell</targetType>
-	</DesignationDef>
-	
-	<DesignationDef>
-		<defName>FZN_Designator_IndoorZoneAdd</defName>
-		<texturePath>Cupro/UI/ZoneCreate_StockpileIndoor</texturePath>
-		<targetType>Cell</targetType>
-	</DesignationDef>
-
+  <DesignationDef>
+    <defName>FZN_Designator_MealZoneAdd</defName>
+    <texturePath>Cupro/UI/ZoneCreate_StockpileMeal</texturePath>
+    <targetType>Cell</targetType>
+  </DesignationDef>
+  <DesignationDef>
+    <defName>FZN_Designator_MedZoneAdd</defName>
+    <texturePath>Cupro/UI/ZoneCreate_StockpileMed</texturePath>
+    <targetType>Cell</targetType>
+  </DesignationDef>
+  <DesignationDef>
+    <defName>FZN_Designator_MeatZoneAdd</defName>
+    <texturePath>Cupro/UI/ZoneCreate_StockpileMeat</texturePath>
+    <targetType>Cell</targetType>
+  </DesignationDef>
+  <DesignationDef>
+    <defName>FZN_Designator_VegZoneAdd</defName>
+    <texturePath>Cupro/UI/ZoneCreate_StockpileVeg</texturePath>
+    <targetType>Cell</targetType>
+  </DesignationDef>
+  <DesignationDef>
+    <defName>FZN_Designator_JoyZoneAdd</defName>
+    <texturePath>Cupro/UI/ZoneCreate_StockpileJoy</texturePath>
+    <targetType>Cell</targetType>
+  </DesignationDef>
+  <DesignationDef>
+    <defName>FZN_Designator_AnimalZoneAdd</defName>
+    <texturePath>Cupro/UI/ZoneCreate_StockpileAnimal</texturePath>
+    <targetType>Cell</targetType>
+  </DesignationDef>
+  <DesignationDef>
+    <defName>FZN_Designator_OutdoorZoneAdd</defName>
+    <texturePath>Cupro/UI/ZoneCreate_StockpileOutdoor</texturePath>
+    <targetType>Cell</targetType>
+  </DesignationDef>
+  <DesignationDef>
+    <defName>FZN_Designator_IndoorZoneAdd</defName>
+    <texturePath>Cupro/UI/ZoneCreate_StockpileIndoor</texturePath>
+    <targetType>Cell</targetType>
+  </DesignationDef>
 </Defs>
