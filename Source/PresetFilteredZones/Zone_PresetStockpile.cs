@@ -92,7 +92,7 @@ namespace PresetFilteredZones
         {
             base.ExposeData();
             Scribe_Deep.Look(ref settings, "settings", new object[] { this });
-            if (Scribe.mode == LoadSaveMode.PostLoadInit)
+            if (Scribe.mode != LoadSaveMode.Saving)
             {
                 slotGroup = new SlotGroup(this);
             }

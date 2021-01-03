@@ -12,7 +12,7 @@
   <loadAfter />
   <description>[img]https://i.imgur.com/WAEzk68.png[/img]
 Update of cuproPandas mod
-https://steamcommunity.com/sharedfiles/filedetails/?id=
+https://steamcommunity.com/sharedfiles/filedetails/?id=1210115905
 
 - Included the [url=https://github.com/Proxyer/FZN]japanese translation[/url] by Proxyer
 
@@ -26,5 +26,30 @@ https://steamcommunity.com/sharedfiles/filedetails/?id=
 [/table]
 	
 [img]https://i.imgur.com/NOW7jU1.png[/img]
-</description>
+Adds new stockpile zones which are already filtered for storing Meals, Meat, Vegetables, Medicine, Joy, Animals, etc. Storage creation is a breeze!
+
+[h1]Workshop ID:[/h1]
+1210115905
+
+[h1]Zones Added:[/h1]
+[b]Meal:[/b] A zone for rottable meals
+[b]Medicine:[/b] A zone for anything in the medicine category
+[b]Meat:[/b] A zone for meats other than human and insect
+[b]Veg:[/b] A zone for rottable fruits, vegetables and edible seeds
+[b]Joy:[/b] A zone for ingestibles that give joy when consumed. Includes drugs
+[b]Animal:[/b] A zone for fresh animal corpses. Doesn't include insect or rotting corpses
+[b]Outdoor:[/b] A zone for Items and Raw Resources that will not deteriorate outside
+[b]Indoor:[/b] A zone for anything that deteriorates outside
+
+
+[h1]Save Compatability[/h1]
+This mod can be added to existing saves.
+Always back up your saves before adding new mods as there is always the possibility for issues.
+
+[h1]Mod Compatability[/h1]
+[b]!!! Industrial Rollers:[/b] These zones are not recognized by Industrial Rollers and won't work. Zones are still usable for normal hauling.
+No known issues yet, please report any issues
+
+[h1]Older Versions and Update Notes[/h1]
+All versions of this mod can be found on my [url=https://github.com/cuproPanda/Preset-Filtered-Zones/releases]GitHub[/url]. Each release has info on what has changed from the previous release.</description>
 </ModMetaData>
