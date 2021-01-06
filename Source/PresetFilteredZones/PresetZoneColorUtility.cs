@@ -9,21 +9,21 @@ namespace PresetFilteredZones
     public enum PresetZoneType
     {
         None,
-        [Description("Meal Stockpile")]
+        [Description("FZN_LabelMealZone")]
         Meal,
-        [Description("Meat StockPile")]
+        [Description("FZN_LabelMeatZone")]
         Meat,
-        [Description("Veg Stockpile")]
+        [Description("FZN_LabelVegZone")]
         Veg,
-        [Description("Medicine Stockpile")]
+        [Description("FZN_LabelMedZone")]
         Med,
-        [Description("Joy Stockpile")]
+        [Description("FZN_LabelJoyZone")]
         Joy,
-        [Description("Animal Stockpile")]
+        [Description("FZN_LabelAnimalZone")]
         Animal,
-        [Description("Outdoor Stockpile")]
+        [Description("FZN_LabelOutdoorZone")]
         Outdoor,
-        [Description("Indoor Stockpile")]
+        [Description("FZN_LabelIndoorZone")]
         Indoor
     }
 

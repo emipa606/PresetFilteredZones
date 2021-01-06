@@ -54,9 +54,9 @@ namespace PresetFilteredZones
 
             if (attributes != null && attributes.Length > 0)
             {
-                return attributes[0].description;
+                return attributes[0].description.Translate();
             }
-            return preset.ToString();
+            return preset.ToString().Translate();
         }
 
     }

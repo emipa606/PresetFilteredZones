@@ -1,4 +1,6 @@
 ﻿
+using Verse;
+
 namespace PresetFilteredZones {
 
   public class Designator_AnimalZoneAdd : Designator_PresetZoneAdd {
