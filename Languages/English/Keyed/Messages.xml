@@ -18,4 +18,6 @@
   <FZN_DescriptionIndoorZone>A preset stockpile for storing resources that will deteriorate outdoors.</FZN_DescriptionIndoorZone>
   <FZN_GizmoShadeLabel>Change Shade</FZN_GizmoShadeLabel>
   <FZN_GizmoShadeDesc>Change the shade of this stockpile.</FZN_GizmoShadeDesc>
+  <FZN_GizmoPresetLabel>Select preset</FZN_GizmoPresetLabel>
+  <FZN_GizmoPresetDesc>Select a preset for this storage buildning</FZN_GizmoPresetDesc>
 </LanguageData>

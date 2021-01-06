@@ -1,5 +1,9 @@
-﻿using System.Reflection;
-
+﻿using RimWorld;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Reflection;
+using System.Text.RegularExpressions;
 using UnityEngine;
 using Verse;
 
@@ -37,6 +41,7 @@ namespace PresetFilteredZones
         public static Texture2D TexAnimalZone = ContentFinder<Texture2D>.Get("Cupro/UI/ZoneCreate_StockpileAnimal", true);
         public static Texture2D TexOutdoorZone = ContentFinder<Texture2D>.Get("Cupro/UI/ZoneCreate_StockpileOutdoor", true);
         public static Texture2D TexIndoorZone = ContentFinder<Texture2D>.Get("Cupro/UI/ZoneCreate_StockpileIndoor", true);
+        public static Texture2D StockpileGizmo = ContentFinder<Texture2D>.Get("Cupro/UI/stockpileGizmo", true);
 
         //public static Texture2D GizmoShadeMeal =    ContentFinder<Texture2D>.Get("Cupro/UI/GizmoShadeMeal", true);
         //public static Texture2D GizmoShadeMed =     ContentFinder<Texture2D>.Get("Cupro/UI/GizmoShadeMed", true);
@@ -57,6 +62,108 @@ namespace PresetFilteredZones
                 return attributes[0].description.Translate();
             }
             return preset.ToString().Translate();
+        }
+
+        public static void SelectBuildingPreset(Building_Storage building)
+        {
+            var list = new List<FloatMenuOption>();
+            foreach (PresetZoneType preset in (PresetZoneType[])Enum.GetValues(typeof(PresetZoneType)))
+            {
+                if (preset == PresetZoneType.None)
+                {
+                    continue;
+                }
+                var textToAdd = GetEnumDescription(preset);
+                list.Add(new FloatMenuOption(textToAdd, delegate ()
+                {
+                    building.settings.filter = SetFilterFromPreset(preset);
+                }, MenuOptionPriority.Default, null, null, 29f, null, null));
+            }
+            var sortedList = list.OrderBy(option => option.Label).ToList();
+            Find.WindowStack.Add(new FloatMenu(sortedList));
+        }
+
+        public static void SelectStockpilePreset(object stockpile)
+        {
+            if (stockpile is Zone_Stockpile)
+            {
+
+            }
+            var list = new List<FloatMenuOption>();
+            var regex = new Regex(@" (\d+)$", RegexOptions.Compiled | RegexOptions.CultureInvariant);
+
+            foreach (PresetZoneType preset in (PresetZoneType[])Enum.GetValues(typeof(PresetZoneType)))
+            {
+                if (preset == PresetZoneType.None)
+                {
+                    continue;
+                }
+                var textToAdd = GetEnumDescription(preset);
+                list.Add(new FloatMenuOption(textToAdd, delegate ()
+                {
+                    if (stockpile is Zone_Stockpile stockpileObject)
+                    {
+                        stockpileObject.settings.filter = SetFilterFromPreset(preset);
+                        Match match = regex.Match(stockpileObject.label);
+                        if (match.Success)
+                        {
+                            stockpileObject.label = stockpileObject.zoneManager.NewZoneName(GetEnumDescription(preset));
+                        }
+                    }
+                    if (stockpile is Zone_PresetStockpile stockpilePresetObject)
+                    {
+                        stockpilePresetObject.settings.filter = SetFilterFromPreset(preset); 
+                        Match match = regex.Match(stockpilePresetObject.label);
+                        if (match.Success)
+                        {
+                            stockpilePresetObject.label = stockpilePresetObject.zoneManager.NewZoneName(GetEnumDescription(preset));
+                        }
+                    }
+                }, MenuOptionPriority.Default, null, null, 29f, null, null));
+            }
+            var sortedList = list.OrderBy(option => option.Label).ToList();
+            Find.WindowStack.Add(new FloatMenu(sortedList));
+        }
+
+
+        public static ThingFilter SetFilterFromPreset(PresetZoneType preset)
+        {
+            //List<ThingDef> database = DefDatabase<ThingDef>.AllDefsListForReading;
+
+            if (preset == PresetZoneType.Meal)
+            {
+                return DefaultFilters.DefaultFilter_MealZone();
+            }
+            if (preset == PresetZoneType.Med)
+            {
+                return DefaultFilters.DefaultFilter_MedZone();
+            }
+            if (preset == PresetZoneType.Meat)
+            {
+                return DefaultFilters.DefaultFilter_MeatZone();
+            }
+            if (preset == PresetZoneType.Veg)
+            {
+                return DefaultFilters.DefaultFilter_VegZone();
+            }
+            if (preset == PresetZoneType.Joy)
+            {
+                return DefaultFilters.DefaultFilter_JoyZone();
+            }
+            if (preset == PresetZoneType.Animal)
+            {
+                return DefaultFilters.DefaultFilter_AnimalZone();
+            }
+            if (preset == PresetZoneType.Outdoor)
+            {
+                return DefaultFilters.DefaultFilter_OutdoorZone();
+            }
+            if (preset == PresetZoneType.Indoor)
+            {
+                return DefaultFilters.DefaultFilter_IndoorZone();
+            }
+            Log.Error("PresetFilteredZones:: Trying to make a zone with PresetZoneType of None.");
+            return DefaultFilters.DefaultFilter_SHTF();
         }
 
     }

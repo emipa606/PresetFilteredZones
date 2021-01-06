@@ -38,6 +38,10 @@
       <ExcludeAssets>runtime</ExcludeAssets>
       <IncludeAssets>compile; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
+    <PackageReference Include="Lib.Harmony">
+      <Version>2.0.2</Version>
+      <ExcludeAssets>runtime</ExcludeAssets>
+    </PackageReference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DefaultFilters.cs" />
@@ -50,6 +54,7 @@
     <Compile Include="Designator_OutdoorZoneAdd.cs" />
     <Compile Include="Designator_PresetZoneAdd.cs" />
     <Compile Include="Designator_VegZoneAdd.cs" />
+    <Compile Include="Harmony_Patches.cs" />
     <Compile Include="PresetZoneColorUtility.cs" />
     <Compile Include="Static.cs" />
     <Compile Include="Zone_PresetStockpile.cs" />

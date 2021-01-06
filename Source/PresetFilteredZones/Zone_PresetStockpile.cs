@@ -39,7 +39,7 @@ namespace PresetFilteredZones
             cells = AllSlotCells().ToList();
             settings = new StorageSettings(this)
             {
-                filter = SetFilterFromPreset(preset),
+                filter = Static.SetFilterFromPreset(preset),
                 Priority = StoragePriority.Important
             };
             slotGroup = new SlotGroup(this);
@@ -47,45 +47,6 @@ namespace PresetFilteredZones
         }
 
 
-        private ThingFilter SetFilterFromPreset(PresetZoneType preset)
-        {
-            //List<ThingDef> database = DefDatabase<ThingDef>.AllDefsListForReading;
-
-            if (preset == PresetZoneType.Meal)
-            {
-                return DefaultFilters.DefaultFilter_MealZone();
-            }
-            if (preset == PresetZoneType.Med)
-            {
-                return DefaultFilters.DefaultFilter_MedZone();
-            }
-            if (preset == PresetZoneType.Meat)
-            {
-                return DefaultFilters.DefaultFilter_MeatZone();
-            }
-            if (preset == PresetZoneType.Veg)
-            {
-                return DefaultFilters.DefaultFilter_VegZone();
-            }
-            if (preset == PresetZoneType.Joy)
-            {
-                return DefaultFilters.DefaultFilter_JoyZone();
-            }
-            if (preset == PresetZoneType.Animal)
-            {
-                return DefaultFilters.DefaultFilter_AnimalZone();
-            }
-            if (preset == PresetZoneType.Outdoor)
-            {
-                return DefaultFilters.DefaultFilter_OutdoorZone();
-            }
-            if (preset == PresetZoneType.Indoor)
-            {
-                return DefaultFilters.DefaultFilter_IndoorZone();
-            }
-            Log.Error("PresetFilteredZones:: Trying to make a zone with PresetZoneType of None.");
-            return DefaultFilters.DefaultFilter_SHTF();
-        }
 
 
         public override void ExposeData()
@@ -162,6 +123,17 @@ namespace PresetFilteredZones
             {
                 yield return giz;
             }
+
+            yield return new Command_Action
+            {
+                icon = Static.StockpileGizmo,
+                defaultLabel = "FZN_GizmoPresetLabel".Translate(),
+                defaultDesc = "FZN_GizmoPresetDesc".Translate(),
+                action = delegate ()
+                {
+                    Static.SelectStockpilePreset(this);
+                }
+            };
         }
 
 
