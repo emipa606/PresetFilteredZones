@@ -1,10 +1,7 @@
-﻿
-namespace PresetFilteredZones
+﻿namespace PresetFilteredZones
 {
-
     public class Designator_JoyZoneAdd : Designator_PresetZoneAdd
     {
-
         public Designator_JoyZoneAdd()
         {
             zoneTypeToPlace = typeof(Zone_PresetStockpile);

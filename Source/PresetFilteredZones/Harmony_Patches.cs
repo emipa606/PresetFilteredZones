@@ -1,15 +1,14 @@
-﻿
-using HarmonyLib;
-using RimWorld;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
+using HarmonyLib;
+using RimWorld;
 using Verse;
 
 namespace PresetFilteredZones
 {
     [StaticConstructorOnStartup]
-    class Harmony_Patches
+    internal class Harmony_Patches
     {
         static Harmony_Patches()
         {
@@ -18,9 +17,9 @@ namespace PresetFilteredZones
         }
 
         [HarmonyPatch(typeof(Building_Storage), "GetGizmos")]
-        class Building_Storage_Patch
+        private class Building_Storage_Patch
         {
-            static void Postfix(ref IEnumerable<Gizmo> __result, Building_Storage __instance)
+            private static void Postfix(ref IEnumerable<Gizmo> __result, Building_Storage __instance)
             {
                 var gizmos = __result.ToList();
                 var selectPresetAction = new Command_Action
@@ -28,10 +27,7 @@ namespace PresetFilteredZones
                     icon = Static.StockpileGizmo,
                     defaultLabel = "FZN_GizmoPresetLabel".Translate(),
                     defaultDesc = "FZN_GizmoPresetDesc".Translate(),
-                    action = delegate ()
-                    {
-                        Static.SelectBuildingPreset(__instance);
-                    }
+                    action = delegate { Static.SelectBuildingPreset(__instance); }
                 };
                 gizmos.Add(selectPresetAction);
                 __result = gizmos;
@@ -39,9 +35,9 @@ namespace PresetFilteredZones
         }
 
         [HarmonyPatch(typeof(Zone_Stockpile), "GetGizmos")]
-        class Zone_Stockpile_Patch
+        private class Zone_Stockpile_Patch
         {
-            static void Postfix(ref IEnumerable<Gizmo> __result, Zone_Stockpile __instance)
+            private static void Postfix(ref IEnumerable<Gizmo> __result, Zone_Stockpile __instance)
             {
                 var gizmos = __result.ToList();
                 var selectPresetAction = new Command_Action
@@ -49,16 +45,11 @@ namespace PresetFilteredZones
                     icon = Static.StockpileGizmo,
                     defaultLabel = "FZN_GizmoPresetLabel".Translate(),
                     defaultDesc = "FZN_GizmoPresetDesc".Translate(),
-                    action = delegate ()
-                    {
-                        Static.SelectStockpilePreset(__instance);
-                    }
+                    action = delegate { Static.SelectStockpilePreset(__instance); }
                 };
                 gizmos.Add(selectPresetAction);
                 __result = gizmos;
             }
         }
-
-
     }
 }

@@ -1,10 +1,7 @@
-﻿
-namespace PresetFilteredZones
+﻿namespace PresetFilteredZones
 {
-
     public class Designator_MedZoneAdd : Designator_PresetZoneAdd
     {
-
         public Designator_MedZoneAdd()
         {
             zoneTypeToPlace = typeof(Zone_PresetStockpile);

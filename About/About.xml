@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <ModMetaData>
   <name>Preset Filtered Zones (Continued)</name>
   <packageId>Mlie.PresetFilteredZones</packageId>
@@ -7,6 +7,7 @@
   <supportedVersions>
     <li>1.1</li>
     <li>1.2</li>
+    <li>1.3</li>
   </supportedVersions>
   <modDependencies>
     <li>
@@ -24,6 +25,8 @@ Update of cuproPandas mod
 https://steamcommunity.com/sharedfiles/filedetails/?id=1210115905
 
 - Included the [url=https://github.com/Proxyer/FZN]japanese translation[/url] by Proxyer
+- Added support for translating the labels of the stockpiles
+- Added presets to storage buildings and stockpiles
 
 [img]https://i.imgur.com/7Gzt3Rg.png[/img]
 
@@ -46,7 +49,7 @@ Adds new stockpile zones which are already filtered for storing Meals, Meat, Veg
 [b]Meat:[/b] A zone for meats other than human and insect
 [b]Veg:[/b] A zone for rottable fruits, vegetables and edible seeds
 [b]Joy:[/b] A zone for ingestibles that give joy when consumed. Includes drugs
-[b]Animal:[/b] A zone for fresh animal corpses. Doesn't include insect or rotting corpses
+[b]Animal:[/b] A zone for fresh animal corpses. Doesn&apos;t include insect or rotting corpses
 [b]Outdoor:[/b] A zone for Items and Raw Resources that will not deteriorate outside
 [b]Indoor:[/b] A zone for anything that deteriorates outside
 
@@ -56,9 +59,21 @@ This mod can be added to existing saves.
 Always back up your saves before adding new mods as there is always the possibility for issues.
 
 [h1]Mod Compatability[/h1]
-[b]!!! Industrial Rollers:[/b] These zones are not recognized by Industrial Rollers and won't work. Zones are still usable for normal hauling.
+[b]!!! Industrial Rollers:[/b] These zones are not recognized by Industrial Rollers and won&apos;t work. Zones are still usable for normal hauling.
 No known issues yet, please report any issues
 
 [h1]Older Versions and Update Notes[/h1]
-All versions of this mod can be found on my [url=https://github.com/cuproPanda/Preset-Filtered-Zones/releases]GitHub[/url]. Each release has info on what has changed from the previous release.</description>
+All versions of this mod can be found on my [url=https://github.com/cuproPanda/Preset-Filtered-Zones/releases]GitHub[/url]. Each release has info on what has changed from the previous release.
+
+[img]https://i.imgur.com/Rs6T6cr.png[/img]
+[list]
+[*] See if the the error persists if you just have this mod and its requirements active.
+[*] If not, try adding your other mods until it happens again.
+[*] Post your error-log using [url=https://steamcommunity.com/workshop/filedetails/?id=818773962]HugsLib[/url] and command Ctrl+F12
+[*] For best support, please use the Discord-channel for error-reporting.
+[*] Do not report errors by making a discussion-thread, I get no notification of that.
+[*] If you have the solution for a problem, please post it to the GitHub repository.
+[/list]
+</description>
 </ModMetaData>
+

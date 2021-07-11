@@ -1,10 +1,7 @@
-﻿
-namespace PresetFilteredZones
+﻿namespace PresetFilteredZones
 {
-
     public class Designator_MeatZoneAdd : Designator_PresetZoneAdd
     {
-
         public Designator_MeatZoneAdd()
         {
             zoneTypeToPlace = typeof(Zone_PresetStockpile);

@@ -1,16 +1,13 @@
-﻿using System.Collections.Generic;
-
-using RimWorld;
+﻿using RimWorld;
 using Verse;
 
 namespace PresetFilteredZones
 {
-
     public class Designator_PresetZoneAdd : Designator_ZoneAdd
     {
+        protected DesignationDef def;
 
         protected PresetZoneType preset;
-        protected DesignationDef def;
 
 
         protected override string NewZoneLabel => Static.GetEnumDescription(preset);
@@ -24,33 +21,38 @@ namespace PresetFilteredZones
 
         public override AcceptanceReport CanDesignateCell(IntVec3 c)
         {
-            AcceptanceReport result = base.CanDesignateCell(c);
+            var result = base.CanDesignateCell(c);
             if (!result.Accepted)
             {
                 return result;
             }
-            TerrainDef terrain = c.GetTerrain(Map);
+
+            var terrain = c.GetTerrain(Map);
             if (terrain.passability == Traversability.Impassable)
             {
                 return false;
             }
-            List<Thing> list = Map.thingGrid.ThingsListAt(c);
-            for (var i = 0; i < list.Count; i++)
+
+            var list = Map.thingGrid.ThingsListAt(c);
+            foreach (var thing in list)
             {
-                if (!list[i].def.CanOverlapZones)
+                if (!thing.def.CanOverlapZones)
                 {
                     return false;
                 }
             }
-            Zone zone = Map.zoneManager.ZoneAt(c);
-            if (zone != null && zone.GetType() == typeof(Zone_PresetStockpile))
+
+            var zone = Map.zoneManager.ZoneAt(c);
+            if (zone == null || zone.GetType() != typeof(Zone_PresetStockpile))
             {
-                var z = zone as Zone_PresetStockpile;
-                if (z.ZoneType != preset)
-                {
-                    return false;
-                }
+                return true;
             }
+
+            if (zone is Zone_PresetStockpile z && z.ZoneType != preset)
+            {
+                return false;
+            }
+
             return true;
         }
     }
