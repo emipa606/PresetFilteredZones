@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <ModMetaData>
   <name>Preset Filtered Zones (Continued)</name>
   <packageId>Mlie.PresetFilteredZones</packageId>
@@ -20,7 +20,7 @@
   <loadAfter>
     <li>brrainz.harmony</li>
   </loadAfter>
-  <description>[img]https://i.imgur.com/WAEzk68.png[/img]
+  <description>[img]https://i.imgur.com/buuPQel.png[/img]
 Update of cuproPandas mod
 https://steamcommunity.com/sharedfiles/filedetails/?id=1210115905
 
@@ -28,7 +28,7 @@ https://steamcommunity.com/sharedfiles/filedetails/?id=1210115905
 - Added support for translating the labels of the stockpiles
 - Added presets to storage buildings and stockpiles
 
-[img]https://i.imgur.com/7Gzt3Rg.png[/img]
+[img]https://i.imgur.com/pufA0kM.png[/img]
 
 [table]
     [tr]
@@ -37,7 +37,7 @@ https://steamcommunity.com/sharedfiles/filedetails/?id=1210115905
     [/tr]
 [/table]
 	
-[img]https://i.imgur.com/NOW7jU1.png[/img]
+[img]https://i.imgur.com/Z4GOv8H.png[/img]
 Adds new stockpile zones which are already filtered for storing Meals, Meat, Vegetables, Medicine, Joy, Animals, etc. Storage creation is a breeze!
 
 [h1]Workshop ID:[/h1]
@@ -49,7 +49,7 @@ Adds new stockpile zones which are already filtered for storing Meals, Meat, Veg
 [b]Meat:[/b] A zone for meats other than human and insect
 [b]Veg:[/b] A zone for rottable fruits, vegetables and edible seeds
 [b]Joy:[/b] A zone for ingestibles that give joy when consumed. Includes drugs
-[b]Animal:[/b] A zone for fresh animal corpses. Doesn&apos;t include insect or rotting corpses
+[b]Animal:[/b] A zone for fresh animal corpses. Doesn't include insect or rotting corpses
 [b]Outdoor:[/b] A zone for Items and Raw Resources that will not deteriorate outside
 [b]Indoor:[/b] A zone for anything that deteriorates outside
 
@@ -59,13 +59,13 @@ This mod can be added to existing saves.
 Always back up your saves before adding new mods as there is always the possibility for issues.
 
 [h1]Mod Compatability[/h1]
-[b]!!! Industrial Rollers:[/b] These zones are not recognized by Industrial Rollers and won&apos;t work. Zones are still usable for normal hauling.
+[b]!!! Industrial Rollers:[/b] These zones are not recognized by Industrial Rollers and won't work. Zones are still usable for normal hauling.
 No known issues yet, please report any issues
 
 [h1]Older Versions and Update Notes[/h1]
 All versions of this mod can be found on my [url=https://github.com/cuproPanda/Preset-Filtered-Zones/releases]GitHub[/url]. Each release has info on what has changed from the previous release.
 
-[img]https://i.imgur.com/Rs6T6cr.png[/img]
+[img]https://i.imgur.com/PwoNOj4.png[/img]
 [list]
 [*] See if the the error persists if you just have this mod and its requirements active.
 [*] If not, try adding your other mods until it happens again.
@@ -76,4 +76,3 @@ All versions of this mod can be found on my [url=https://github.com/cuproPanda/P
 [/list]
 </description>
 </ModMetaData>
-

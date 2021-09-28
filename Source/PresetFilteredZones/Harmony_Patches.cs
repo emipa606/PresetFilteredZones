@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using System.Linq;
 using System.Reflection;
 using HarmonyLib;
 using RimWorld;
@@ -19,9 +18,13 @@ namespace PresetFilteredZones
         [HarmonyPatch(typeof(Building_Storage), "GetGizmos")]
         private class Building_Storage_Patch
         {
-            private static void Postfix(ref IEnumerable<Gizmo> __result, Building_Storage __instance)
+            private static IEnumerable<Gizmo> Postfix(IEnumerable<Gizmo> values, Building_Storage __instance)
             {
-                var gizmos = __result.ToList();
+                foreach (var value in values)
+                {
+                    yield return value;
+                }
+
                 var selectPresetAction = new Command_Action
                 {
                     icon = Static.StockpileGizmo,
@@ -29,17 +32,20 @@ namespace PresetFilteredZones
                     defaultDesc = "FZN_GizmoPresetDesc".Translate(),
                     action = delegate { Static.SelectBuildingPreset(__instance); }
                 };
-                gizmos.Add(selectPresetAction);
-                __result = gizmos;
+                yield return selectPresetAction;
             }
         }
 
         [HarmonyPatch(typeof(Zone_Stockpile), "GetGizmos")]
         private class Zone_Stockpile_Patch
         {
-            private static void Postfix(ref IEnumerable<Gizmo> __result, Zone_Stockpile __instance)
+            private static IEnumerable<Gizmo> Postfix(IEnumerable<Gizmo> values, Zone_Stockpile __instance)
             {
-                var gizmos = __result.ToList();
+                foreach (var value in values)
+                {
+                    yield return value;
+                }
+
                 var selectPresetAction = new Command_Action
                 {
                     icon = Static.StockpileGizmo,
@@ -47,8 +53,7 @@ namespace PresetFilteredZones
                     defaultDesc = "FZN_GizmoPresetDesc".Translate(),
                     action = delegate { Static.SelectStockpilePreset(__instance); }
                 };
-                gizmos.Add(selectPresetAction);
-                __result = gizmos;
+                yield return selectPresetAction;
             }
         }
     }

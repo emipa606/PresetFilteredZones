@@ -1,5 +1,8 @@
 # Changelog for PresetFilteredZones
 
+1.0.7.0 - Optimizations of Gizmos, thanks Kayedon for the report!
+
+
 1.0.6.0 - Mod updated for 1.3 and passed autotests
 
 

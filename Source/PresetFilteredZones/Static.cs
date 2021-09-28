@@ -47,6 +47,12 @@ namespace PresetFilteredZones
         //public static string GizmoShadeLabel =  "FZN_GizmoShadeLabel".Translate();
         //public static string GizmoShadeDesc =   "FZN_GizmoShadeDesc".Translate();
 
+        private static readonly Dictionary<Building_Storage, FloatMenu> buildingMenues =
+            new Dictionary<Building_Storage, FloatMenu>();
+
+        private static readonly Dictionary<object, FloatMenu> stockpileMenues =
+            new Dictionary<object, FloatMenu>();
+
         public static readonly Texture2D
             TexMealZone = ContentFinder<Texture2D>.Get("Cupro/UI/ZoneCreate_StockpileMeal");
 
@@ -82,7 +88,7 @@ namespace PresetFilteredZones
             var fieldInfo = preset.GetType().GetField(preset.ToString());
 
             var attributes =
-                (DescriptionAttribute[]) fieldInfo.GetCustomAttributes(typeof(DescriptionAttribute), false);
+                (DescriptionAttribute[])fieldInfo.GetCustomAttributes(typeof(DescriptionAttribute), false);
 
             if (attributes.Length > 0)
             {
@@ -94,70 +100,80 @@ namespace PresetFilteredZones
 
         public static void SelectBuildingPreset(Building_Storage building)
         {
-            var list = new List<FloatMenuOption>();
-            foreach (var preset in (PresetZoneType[]) Enum.GetValues(typeof(PresetZoneType)))
+            if (!buildingMenues.ContainsKey(building))
             {
-                if (preset == PresetZoneType.None)
+                var list = new List<FloatMenuOption>();
+                foreach (var preset in (PresetZoneType[])Enum.GetValues(typeof(PresetZoneType)))
                 {
-                    continue;
+                    if (preset == PresetZoneType.None)
+                    {
+                        continue;
+                    }
+
+                    var textToAdd = GetEnumDescription(preset);
+                    list.Add(new FloatMenuOption(textToAdd,
+                        delegate { building.settings.filter = SetFilterFromPreset(preset); },
+                        MenuOptionPriority.Default,
+                        null, null, 29f));
                 }
 
-                var textToAdd = GetEnumDescription(preset);
-                list.Add(new FloatMenuOption(textToAdd,
-                    delegate { building.settings.filter = SetFilterFromPreset(preset); }, MenuOptionPriority.Default,
-                    null, null, 29f));
+                buildingMenues[building] = new FloatMenu(list.OrderBy(option => option.Label).ToList());
             }
 
-            var sortedList = list.OrderBy(option => option.Label).ToList();
-            Find.WindowStack.Add(new FloatMenu(sortedList));
+            Find.WindowStack.Add(buildingMenues[building]);
         }
 
         public static void SelectStockpilePreset(object stockpile)
         {
-            if (stockpile is Zone_Stockpile)
+            if (!stockpileMenues.ContainsKey(stockpile))
             {
-            }
-
-            var list = new List<FloatMenuOption>();
-            var regex = new Regex(@" (\d+)$", RegexOptions.Compiled | RegexOptions.CultureInvariant);
-
-            foreach (var preset in (PresetZoneType[]) Enum.GetValues(typeof(PresetZoneType)))
-            {
-                if (preset == PresetZoneType.None)
+                if (stockpile is Zone_Stockpile)
                 {
-                    continue;
                 }
 
-                var textToAdd = GetEnumDescription(preset);
-                list.Add(new FloatMenuOption(textToAdd, delegate
+                var list = new List<FloatMenuOption>();
+                var regex = new Regex(@" (\d+)$", RegexOptions.Compiled | RegexOptions.CultureInvariant);
+
+                foreach (var preset in (PresetZoneType[])Enum.GetValues(typeof(PresetZoneType)))
                 {
-                    if (stockpile is Zone_Stockpile stockpileObject)
+                    if (preset == PresetZoneType.None)
                     {
-                        stockpileObject.settings.filter = SetFilterFromPreset(preset);
-                        var match = regex.Match(stockpileObject.label);
-                        if (match.Success)
+                        continue;
+                    }
+
+                    var textToAdd = GetEnumDescription(preset);
+                    list.Add(new FloatMenuOption(textToAdd, delegate
+                    {
+                        if (stockpile is Zone_Stockpile stockpileObject)
                         {
-                            stockpileObject.label = stockpileObject.zoneManager.NewZoneName(GetEnumDescription(preset));
+                            stockpileObject.settings.filter = SetFilterFromPreset(preset);
+                            var match = regex.Match(stockpileObject.label);
+                            if (match.Success)
+                            {
+                                stockpileObject.label =
+                                    stockpileObject.zoneManager.NewZoneName(GetEnumDescription(preset));
+                            }
                         }
-                    }
 
-                    if (stockpile is not Zone_PresetStockpile stockpilePresetObject)
-                    {
-                        return;
-                    }
+                        if (stockpile is not Zone_PresetStockpile stockpilePresetObject)
+                        {
+                            return;
+                        }
 
-                    stockpilePresetObject.settings.filter = SetFilterFromPreset(preset);
-                    var regmatch = regex.Match(stockpilePresetObject.label);
-                    if (regmatch.Success)
-                    {
-                        stockpilePresetObject.label =
-                            stockpilePresetObject.zoneManager.NewZoneName(GetEnumDescription(preset));
-                    }
-                }, MenuOptionPriority.Default, null, null, 29f));
+                        stockpilePresetObject.settings.filter = SetFilterFromPreset(preset);
+                        var regmatch = regex.Match(stockpilePresetObject.label);
+                        if (regmatch.Success)
+                        {
+                            stockpilePresetObject.label =
+                                stockpilePresetObject.zoneManager.NewZoneName(GetEnumDescription(preset));
+                        }
+                    }, MenuOptionPriority.Default, null, null, 29f));
+                }
+
+                stockpileMenues[stockpile] = new FloatMenu(list.OrderBy(option => option.Label).ToList());
             }
 
-            var sortedList = list.OrderBy(option => option.Label).ToList();
-            Find.WindowStack.Add(new FloatMenu(sortedList));
+            Find.WindowStack.Add(stockpileMenues[stockpile]);
         }
 
 

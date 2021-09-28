@@ -1,6 +1,6 @@
 # PresetFilteredZones
 
-![Image](https://i.imgur.com/WAEzk68.png)
+![Image](https://i.imgur.com/buuPQel.png)
 
 Update of cuproPandas mod
 https://steamcommunity.com/sharedfiles/filedetails/?id=1210115905
@@ -9,19 +9,10 @@ https://steamcommunity.com/sharedfiles/filedetails/?id=1210115905
 - Added support for translating the labels of the stockpiles
 - Added presets to storage buildings and stockpiles
 
-![Image](https://i.imgur.com/7Gzt3Rg.png)
+![Image](https://i.imgur.com/pufA0kM.png)
 
-
-[table]
-    [tr]
-        [td]https://invite.gg/Mlie]![Image](https://i.imgur.com/zdzzBrc.png)
-[/td]
-        [td]https://github.com/emipa606/PresetFilteredZones]![Image](https://i.imgur.com/kTkpTOE.png)
-[/td]
-    [/tr]
-[/table]
 	
-![Image](https://i.imgur.com/NOW7jU1.png)
+![Image](https://i.imgur.com/Z4GOv8H.png)
 
 Adds new stockpile zones which are already filtered for storing Meals, Meat, Vegetables, Medicine, Joy, Animals, etc. Storage creation is a breeze!
 
@@ -36,7 +27,7 @@ Adds new stockpile zones which are already filtered for storing Meals, Meat, Veg
 **Meat:** A zone for meats other than human and insect
 **Veg:** A zone for rottable fruits, vegetables and edible seeds
 **Joy:** A zone for ingestibles that give joy when consumed. Includes drugs
-**Animal:** A zone for fresh animal corpses. Doesn&apos;t include insect or rotting corpses
+**Animal:** A zone for fresh animal corpses. Doesn't include insect or rotting corpses
 **Outdoor:** A zone for Items and Raw Resources that will not deteriorate outside
 **Indoor:** A zone for anything that deteriorates outside
 
@@ -48,14 +39,14 @@ Always back up your saves before adding new mods as there is always the possibil
 
 # Mod Compatability
 
-**!!! Industrial Rollers:** These zones are not recognized by Industrial Rollers and won&apos;t work. Zones are still usable for normal hauling.
+**!!! Industrial Rollers:** These zones are not recognized by Industrial Rollers and won't work. Zones are still usable for normal hauling.
 No known issues yet, please report any issues
 
 # Older Versions and Update Notes
 
 All versions of this mod can be found on my https://github.com/cuproPanda/Preset-Filtered-Zones/releases]GitHub. Each release has info on what has changed from the previous release.
 
-![Image](https://i.imgur.com/Rs6T6cr.png)
+![Image](https://i.imgur.com/PwoNOj4.png)
 
 
 
