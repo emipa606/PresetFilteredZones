@@ -1,10 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Defs>
-  <HugsLib.UpdateFeatureDef Abstract="true" Name="UpdateFeatureBase">
+  <HugsLib.UpdateFeatureDef Abstract="true" Name="PresetFilteredZones_UpdateFeatureBase">
     <modNameReadable>PresetFilteredZones</modNameReadable>
     <linkUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=2343873835</linkUrl>
   </HugsLib.UpdateFeatureDef>
-  <HugsLib.UpdateFeatureDef ParentName="UpdateFeatureBase">
+  <HugsLib.UpdateFeatureDef ParentName="PresetFilteredZones_UpdateFeatureBase">
     <defName>PresetFilteredZones_1_0_4_0</defName>
     <assemblyVersion>1.0.4.0</assemblyVersion>
     <content>Added some new functionality. It is now possible to use the presets on any stockpile and storage building. 

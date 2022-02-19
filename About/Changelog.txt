@@ -1,5 +1,8 @@
 # Changelog for PresetFilteredZones
 
+1.3.1 - More unique defname for the HugLib-news base-definition, to avoid conflicts with other mods. Also added logging-option
+
+
 1.0.7.0 - Optimizations of Gizmos, thanks Kayedon for the report!
 
 
