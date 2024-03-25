@@ -6,7 +6,7 @@ using Verse;
 
 namespace PresetFilteredZones;
 
-public class Zone_PresetStockpile : Zone, IStoreSettingsParent, ISlotGroupParent
+public class Zone_PresetStockpile : Zone, ISlotGroupParent
 {
     private static readonly ITab StorageTab = new ITab_Storage();
 
@@ -42,6 +42,10 @@ public class Zone_PresetStockpile : Zone, IStoreSettingsParent, ISlotGroupParent
     public new Map Map => zoneManager.map;
 
     public bool IgnoreStoredThingsBeauty => false;
+
+    public string GroupingLabel => "StockpilePlural".Translate();
+
+    public int GroupingOrder => -50;
 
 
     public SlotGroup GetSlotGroup()
@@ -196,28 +200,4 @@ public class Zone_PresetStockpile : Zone, IStoreSettingsParent, ISlotGroupParent
             action = delegate { Static.SelectStockpilePreset(this); }
         };
     }
-
-
-    //public static Texture2D GizmoShadeFor(PresetZoneType type) {
-    //  if (type == PresetZoneType.Meal) {
-    //    return Static.GizmoShadeMeal;
-    //  }
-    //  if (type == PresetZoneType.Med) {
-    //    return Static.GizmoShadeMed;
-    //  }
-    //  if (type == PresetZoneType.Meat) {
-    //    return Static.GizmoShadeMeat;
-    //  }
-    //  if (type == PresetZoneType.Veg) {
-    //    return Static.GizmoShadeVeg;
-    //  }
-    //  if (type == PresetZoneType.Joy) {
-    //    return Static.GizmoShadeJoy;
-    //  }
-    //  if (type == PresetZoneType.Animal) {
-    //    return Static.GizmoShadeAnimal;
-    //  }
-
-    //  return BaseContent.BadTex;
-    //}
 }

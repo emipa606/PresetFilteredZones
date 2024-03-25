@@ -4,19 +4,6 @@ using Verse;
 
 namespace PresetFilteredZones;
 
-public enum PresetZoneType
-{
-    None,
-    [Description("FZN_LabelMealZone")] Meal,
-    [Description("FZN_LabelMeatZone")] Meat,
-    [Description("FZN_LabelVegZone")] Veg,
-    [Description("FZN_LabelMedZone")] Med,
-    [Description("FZN_LabelJoyZone")] Joy,
-    [Description("FZN_LabelAnimalZone")] Animal,
-    [Description("FZN_LabelOutdoorZone")] Outdoor,
-    [Description("FZN_LabelIndoorZone")] Indoor
-}
-
 [StaticConstructorOnStartup]
 public static class PresetZoneColorUtility
 {
@@ -82,8 +69,7 @@ public static class PresetZoneColorUtility
 
     private static void PaintMealZone()
     {
-        mealZonePalette = Dilute(new List<Color>
-        {
+        mealZonePalette = Dilute([
             ColorLibrary.Purple,
             ColorLibrary.Violet,
             ColorLibrary.DeepPurple,
@@ -94,14 +80,13 @@ public static class PresetZoneColorUtility
             ColorLibrary.Lilac,
             ColorLibrary.DarkPurple,
             ColorLibrary.Lavender
-        });
+        ]);
     }
 
 
     private static void PaintMedZone()
     {
-        medZonePalette = Dilute(new List<Color>
-        {
+        medZonePalette = Dilute([
             ColorLibrary.Blue,
             ColorLibrary.BabyBlue,
             ColorLibrary.Navy,
@@ -111,14 +96,13 @@ public static class PresetZoneColorUtility
             ColorLibrary.RoyalBlue,
             ColorLibrary.Aqua,
             ColorLibrary.DarkBlue
-        });
+        ]);
     }
 
 
     private static void PaintMeatZone()
     {
-        meatZonePalette = Dilute(new List<Color>
-        {
+        meatZonePalette = Dilute([
             ColorLibrary.Red,
             ColorLibrary.Magenta,
             ColorLibrary.Burgundy,
@@ -130,14 +114,13 @@ public static class PresetZoneColorUtility
             ColorLibrary.Salmon,
             ColorLibrary.Maroon,
             ColorLibrary.Mauve
-        });
+        ]);
     }
 
 
     private static void PaintVegZone()
     {
-        vegZonePalette = Dilute(new List<Color>
-        {
+        vegZonePalette = Dilute([
             ColorLibrary.Green,
             ColorLibrary.PastelGreen,
             ColorLibrary.PeaGreen,
@@ -146,14 +129,13 @@ public static class PresetZoneColorUtility
             ColorLibrary.OliveGreen,
             ColorLibrary.ForestGreen,
             ColorLibrary.DarkGreen
-        });
+        ]);
     }
 
 
     private static void PaintJoyZone()
     {
-        joyZonePalette = Dilute(new List<Color>
-        {
+        joyZonePalette = Dilute([
             ColorLibrary.Orange,
             ColorLibrary.Yellow,
             ColorLibrary.DarkOrange,
@@ -161,24 +143,23 @@ public static class PresetZoneColorUtility
             ColorLibrary.LightOrange,
             ColorLibrary.Gold,
             ColorLibrary.Mustard
-        });
+        ]);
     }
 
 
     private static void PaintAnimalZone()
     {
-        animalZonePalette = Dilute(new List<Color>
-        {
+        animalZonePalette = Dilute([
             ColorLibrary.Brown,
             ColorLibrary.Leather,
             ColorLibrary.DarkBrown
-        });
+        ]);
     }
 
 
     private static void PaintOutdoorZone()
     {
-        outdoorZonePalette = new List<Color>();
+        outdoorZonePalette = [];
         foreach (var color in mealZonePalette)
         {
             var v = color.grayscale;

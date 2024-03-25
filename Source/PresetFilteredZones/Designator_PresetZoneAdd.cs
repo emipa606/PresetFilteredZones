@@ -48,11 +48,6 @@ public class Designator_PresetZoneAdd : Designator_ZoneAdd
             return true;
         }
 
-        if (zone is Zone_PresetStockpile z && z.ZoneType != preset)
-        {
-            return false;
-        }
-
-        return true;
+        return zone is not Zone_PresetStockpile z || z.ZoneType == preset;
     }
 }

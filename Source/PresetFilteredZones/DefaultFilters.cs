@@ -51,8 +51,7 @@ public static class DefaultFilters
 
         foreach (var thingDef in database)
         {
-            if (thingDef.IsIngestible && thingDef.ingestible.sourceDef?.race != null &&
-                !thingDef.ingestible.sourceDef.race.Humanlike &&
+            if (thingDef.IsIngestible && thingDef.ingestible.sourceDef?.race is { Humanlike: false } &&
                 thingDef.ingestible.sourceDef.race.FleshType != FleshTypeDefOf.Insectoid)
             {
                 filter.SetAllow(thingDef, true);
@@ -109,7 +108,7 @@ public static class DefaultFilters
         filter.SetDisallowAll();
 
         filter.SetAllow(ThingCategoryDefOf.CorpsesAnimal, true);
-        filter.SetAllow(ThingCategoryDefOf.CorpsesInsect, false);
+        filter.SetAllow(ThingCategoryDef.Named("CorpsesInsect"), false);
         filter.SetAllow(SpecialThingFilterDef.Named("AllowRotten"), false);
         return filter;
     }

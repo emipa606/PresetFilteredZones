@@ -90,12 +90,7 @@ public static class Static
         var attributes =
             (DescriptionAttribute[])fieldInfo.GetCustomAttributes(typeof(DescriptionAttribute), false);
 
-        if (attributes.Length > 0)
-        {
-            return attributes[0].description.Translate();
-        }
-
-        return preset.ToString().Translate();
+        return attributes.Length > 0 ? attributes[0].description.Translate() : preset.ToString().Translate();
     }
 
     public static void SelectBuildingPreset(Building_Storage building)
