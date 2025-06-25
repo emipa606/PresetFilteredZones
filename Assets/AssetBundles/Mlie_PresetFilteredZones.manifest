@@ -1,0 +1,34 @@
+ManifestFileVersion: 0
+CRC: 2663247412
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: b1c03c022a17e3a5f5f9acedbcbd3384
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 2612ac43db082a73502ee80f2eceb73f
+  IncrementalBuildHash:
+    serializedVersion: 2
+    Hash: b1c03c022a17e3a5f5f9acedbcbd3384
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/Data/Mlie.PresetFilteredZones/Textures/Cupro/UI/GizmoShadeJoy.png
+- Assets/Data/Mlie.PresetFilteredZones/Textures/Cupro/UI/ZoneCreate_StockpileOutdoor.png
+- Assets/Data/Mlie.PresetFilteredZones/Textures/Cupro/UI/GizmoShadeMed.png
+- Assets/Data/Mlie.PresetFilteredZones/Textures/Cupro/UI/GizmoShadeVeg.png
+- Assets/Data/Mlie.PresetFilteredZones/Textures/Cupro/UI/ZoneCreate_StockpileMed.png
+- Assets/Data/Mlie.PresetFilteredZones/Textures/Cupro/UI/GizmoShadeMeal.png
+- Assets/Data/Mlie.PresetFilteredZones/Textures/Cupro/UI/GizmoShadeMeat.png
+- Assets/Data/Mlie.PresetFilteredZones/Textures/Cupro/UI/ZoneCreate_StockpileAnimal.png
+- Assets/Data/Mlie.PresetFilteredZones/Textures/Cupro/UI/ZoneCreate_StockpileMeal.png
+- Assets/Data/Mlie.PresetFilteredZones/Textures/Cupro/UI/GizmoShadeAnimal.png
+- Assets/Data/Mlie.PresetFilteredZones/Textures/Cupro/UI/ZoneCreate_StockpileJoy.png
+- Assets/Data/Mlie.PresetFilteredZones/Textures/Cupro/UI/ZoneCreate_StockpileMeat.png
+- Assets/Data/Mlie.PresetFilteredZones/Textures/Cupro/UI/ZoneCreate_StockpileVeg.png
+- Assets/Data/Mlie.PresetFilteredZones/Textures/Cupro/UI/ZoneCreate_StockpileIndoor.png
+- Assets/Data/Mlie.PresetFilteredZones/Textures/Cupro/UI/stockpileGizmo.png
+Dependencies: []

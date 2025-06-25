@@ -8,11 +8,11 @@ namespace PresetFilteredZones;
 
 public class Zone_PresetStockpile : Zone, ISlotGroupParent
 {
-    private static readonly ITab StorageTab = new ITab_Storage();
+    private static readonly ITab storageTab = new ITab_Storage();
 
-    public StorageSettings settings;
-    public SlotGroup slotGroup;
-    public ThingFilter thingFilter;
+    public StorageSettings Settings;
+    private SlotGroup slotGroup;
+    public ThingFilter ThingFilter;
     private PresetZoneType zoneType;
 
 
@@ -26,7 +26,7 @@ public class Zone_PresetStockpile : Zone, ISlotGroupParent
     {
         zoneType = preset;
         cells = AllSlotCells().ToList();
-        settings = new StorageSettings(this)
+        Settings = new StorageSettings(this)
         {
             filter = Static.SetFilterFromPreset(preset),
             Priority = StoragePriority.Important
@@ -40,6 +40,7 @@ public class Zone_PresetStockpile : Zone, ISlotGroupParent
     protected override Color NextZoneColor => PresetZoneColorUtility.NewZoneColor(zoneType);
 
     public new Map Map => zoneManager.map;
+    public bool HaulDestinationEnabled { get; }
 
     public bool IgnoreStoredThingsBeauty => false;
 
@@ -65,10 +66,7 @@ public class Zone_PresetStockpile : Zone, ISlotGroupParent
 
     public List<IntVec3> AllSlotCellsList()
     {
-        if (cells == null)
-        {
-            cells = AllSlotCells().ToList();
-        }
+        cells ??= AllSlotCells().ToList();
 
         return cells;
     }
@@ -96,7 +94,7 @@ public class Zone_PresetStockpile : Zone, ISlotGroupParent
 
     bool IHaulDestination.Accepts(Thing t)
     {
-        return settings.filter.Allows(t);
+        return Settings.filter.Allows(t);
     }
 
     public void Notify_SettingsChanged()
@@ -114,14 +112,14 @@ public class Zone_PresetStockpile : Zone, ISlotGroupParent
 
     public StorageSettings GetStoreSettings()
     {
-        return settings;
+        return Settings;
     }
 
 
     public override void ExposeData()
     {
         base.ExposeData();
-        Scribe_Deep.Look(ref settings, "settings", this);
+        Scribe_Deep.Look(ref Settings, "settings", this);
         if (Scribe.mode != LoadSaveMode.Saving)
         {
             slotGroup = new SlotGroup(this);
@@ -145,16 +143,9 @@ public class Zone_PresetStockpile : Zone, ISlotGroupParent
     }
 
 
-    //public new void Deregister()
-    //{
-    //    base.Deregister();
-    //    slotGroup.Notify_ParentDestroying();
-    //}
-
-
     public override IEnumerable<InspectTabBase> GetInspectTabs()
     {
-        yield return StorageTab;
+        yield return storageTab;
         var returnTabs = base.GetInspectTabs();
         if (returnTabs == null)
         {
@@ -169,25 +160,12 @@ public class Zone_PresetStockpile : Zone, ISlotGroupParent
 
     public override IEnumerable<Gizmo> GetGizmos()
     {
-        //yield return new Command_Action() {
-        //  icon = GizmoShadeFor(zoneType),
-        //  defaultLabel = Static.GizmoShadeLabel,
-        //  defaultDesc = Static.GizmoShadeDesc,
-        //  activateSound = SoundDefOf.Click,
-        //  action = () => {
-        //    color = NextZoneColor;
-        //    for (int c = 0; c < Cells.Count; c++) {
-        //      Map.mapDrawer.MapMeshDirty(Cells[c], MapMeshFlag.Zone);
-        //    }
-        //  }
-        //};
-
         foreach (var giz in base.GetGizmos())
         {
             yield return giz;
         }
 
-        foreach (var giz in StorageSettingsClipboard.CopyPasteGizmosFor(settings))
+        foreach (var giz in StorageSettingsClipboard.CopyPasteGizmosFor(Settings))
         {
             yield return giz;
         }

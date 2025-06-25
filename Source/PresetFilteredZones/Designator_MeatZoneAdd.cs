@@ -5,10 +5,10 @@ public class Designator_MeatZoneAdd : Designator_PresetZoneAdd
     public Designator_MeatZoneAdd()
     {
         zoneTypeToPlace = typeof(Zone_PresetStockpile);
-        preset = PresetZoneType.Meat;
-        defaultLabel = Static.GetEnumDescription(preset);
+        Preset = PresetZoneType.Meat;
+        defaultLabel = Static.GetEnumDescription(Preset);
         defaultDesc = Static.MeatZoneDesc;
         icon = Static.TexMeatZone;
-        def = Static.DesMeatZone;
+        Def = Static.DesMeatZone;
     }
 }

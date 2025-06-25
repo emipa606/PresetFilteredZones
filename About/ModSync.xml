@@ -2,7 +2,7 @@
 <ModSyncNinjaData>
   <ID>59583eca-cc8f-4a26-9c23-89be9f906236</ID>
   <ModName>Preset Filtered Zones (Continued)</ModName>
-  <Version>1.5.0</Version>
+  <Version>1.6.0</Version>
   <SaveBreaking>False</SaveBreaking>
   <Host name="Github">
     <Owner>emipa606</Owner>
@@ -12,3 +12,4 @@
     <Branch>master</Branch>
   </Host>
 </ModSyncNinjaData>
+

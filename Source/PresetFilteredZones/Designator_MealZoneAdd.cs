@@ -5,10 +5,10 @@ public class Designator_MealZoneAdd : Designator_PresetZoneAdd
     public Designator_MealZoneAdd()
     {
         zoneTypeToPlace = typeof(Zone_PresetStockpile);
-        preset = PresetZoneType.Meal;
-        defaultLabel = Static.GetEnumDescription(preset);
+        Preset = PresetZoneType.Meal;
+        defaultLabel = Static.GetEnumDescription(Preset);
         defaultDesc = Static.MealZoneDesc;
         icon = Static.TexMealZone;
-        def = Static.DesMealZone;
+        Def = Static.DesMealZone;
     }
 }

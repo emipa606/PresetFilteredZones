@@ -44,14 +44,10 @@ public static class Static
     public static readonly string OutdoorZoneDesc = "FZN_DescriptionOutdoorZone".Translate();
 
     public static readonly string IndoorZoneDesc = "FZN_DescriptionIndoorZone".Translate();
-    //public static string GizmoShadeLabel =  "FZN_GizmoShadeLabel".Translate();
-    //public static string GizmoShadeDesc =   "FZN_GizmoShadeDesc".Translate();
 
-    private static readonly Dictionary<Building_Storage, FloatMenu> buildingMenues =
-        new Dictionary<Building_Storage, FloatMenu>();
+    private static readonly Dictionary<Building_Storage, FloatMenu> buildingMenues = new();
 
-    private static readonly Dictionary<object, FloatMenu> stockpileMenues =
-        new Dictionary<object, FloatMenu>();
+    private static readonly Dictionary<object, FloatMenu> stockpileMenues = new();
 
     public static readonly Texture2D
         TexMealZone = ContentFinder<Texture2D>.Get("Cupro/UI/ZoneCreate_StockpileMeal");
@@ -74,14 +70,6 @@ public static class Static
         ContentFinder<Texture2D>.Get("Cupro/UI/ZoneCreate_StockpileIndoor");
 
     public static readonly Texture2D StockpileGizmo = ContentFinder<Texture2D>.Get("Cupro/UI/stockpileGizmo");
-
-    //public static Texture2D GizmoShadeMeal =    ContentFinder<Texture2D>.Get("Cupro/UI/GizmoShadeMeal", true);
-    //public static Texture2D GizmoShadeMed =     ContentFinder<Texture2D>.Get("Cupro/UI/GizmoShadeMed", true);
-    //public static Texture2D GizmoShadeMeat =    ContentFinder<Texture2D>.Get("Cupro/UI/GizmoShadeMeat", true);
-    //public static Texture2D GizmoShadeVeg =     ContentFinder<Texture2D>.Get("Cupro/UI/GizmoShadeVeg", true);
-    //public static Texture2D GizmoShadeJoy =     ContentFinder<Texture2D>.Get("Cupro/UI/GizmoShadeJoy", true);
-    //public static Texture2D GizmoShadeAnimal =  ContentFinder<Texture2D>.Get("Cupro/UI/GizmoShadeAnimal", true);
-
 
     public static string GetEnumDescription(PresetZoneType preset)
     {
@@ -155,9 +143,9 @@ public static class Static
                         return;
                     }
 
-                    stockpilePresetObject.settings.filter = SetFilterFromPreset(preset);
-                    var regmatch = regex.Match(stockpilePresetObject.label);
-                    if (regmatch.Success)
+                    stockpilePresetObject.Settings.filter = SetFilterFromPreset(preset);
+                    var regMatch = regex.Match(stockpilePresetObject.label);
+                    if (regMatch.Success)
                     {
                         stockpilePresetObject.label =
                             stockpilePresetObject.zoneManager.NewZoneName(GetEnumDescription(preset));

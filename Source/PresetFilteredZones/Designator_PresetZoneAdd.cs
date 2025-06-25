@@ -5,17 +5,17 @@ namespace PresetFilteredZones;
 
 public class Designator_PresetZoneAdd : Designator_ZoneAdd
 {
-    protected DesignationDef def;
+    protected DesignationDef Def;
 
-    protected PresetZoneType preset;
+    protected PresetZoneType Preset;
 
 
-    protected override string NewZoneLabel => Static.GetEnumDescription(preset);
+    protected override string NewZoneLabel => Static.GetEnumDescription(Preset);
 
 
     protected override Zone MakeNewZone()
     {
-        return new Zone_PresetStockpile(preset, Find.CurrentMap.zoneManager);
+        return new Zone_PresetStockpile(Preset, Find.CurrentMap.zoneManager);
     }
 
 
@@ -48,6 +48,6 @@ public class Designator_PresetZoneAdd : Designator_ZoneAdd
             return true;
         }
 
-        return zone is not Zone_PresetStockpile z || z.ZoneType == preset;
+        return zone is not Zone_PresetStockpile z || z.ZoneType == Preset;
     }
 }

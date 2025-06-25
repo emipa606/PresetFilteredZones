@@ -5,10 +5,10 @@ public class Designator_VegZoneAdd : Designator_PresetZoneAdd
     public Designator_VegZoneAdd()
     {
         zoneTypeToPlace = typeof(Zone_PresetStockpile);
-        preset = PresetZoneType.Veg;
-        defaultLabel = Static.GetEnumDescription(preset);
+        Preset = PresetZoneType.Veg;
+        defaultLabel = Static.GetEnumDescription(Preset);
         defaultDesc = Static.VegZoneDesc;
         icon = Static.TexVegZone;
-        def = Static.DesVegZone;
+        Def = Static.DesVegZone;
     }
 }

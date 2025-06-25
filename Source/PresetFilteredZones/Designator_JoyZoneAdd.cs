@@ -5,10 +5,10 @@ public class Designator_JoyZoneAdd : Designator_PresetZoneAdd
     public Designator_JoyZoneAdd()
     {
         zoneTypeToPlace = typeof(Zone_PresetStockpile);
-        preset = PresetZoneType.Joy;
-        defaultLabel = Static.GetEnumDescription(preset);
+        Preset = PresetZoneType.Joy;
+        defaultLabel = Static.GetEnumDescription(Preset);
         defaultDesc = Static.JoyZoneDesc;
         icon = Static.TexJoyZone;
-        def = Static.DesJoyZone;
+        Def = Static.DesJoyZone;
     }
 }

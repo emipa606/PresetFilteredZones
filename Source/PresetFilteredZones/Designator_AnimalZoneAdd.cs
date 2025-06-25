@@ -5,10 +5,10 @@ public class Designator_AnimalZoneAdd : Designator_PresetZoneAdd
     public Designator_AnimalZoneAdd()
     {
         zoneTypeToPlace = typeof(Zone_PresetStockpile);
-        preset = PresetZoneType.Animal;
-        defaultLabel = Static.GetEnumDescription(preset);
+        Preset = PresetZoneType.Animal;
+        defaultLabel = Static.GetEnumDescription(Preset);
         defaultDesc = Static.AnimalZoneDesc;
         icon = Static.TexAnimalZone;
-        def = Static.DesAnimalZone;
+        Def = Static.DesAnimalZone;
     }
 }

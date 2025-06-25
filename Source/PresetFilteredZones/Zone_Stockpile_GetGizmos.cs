@@ -5,10 +5,10 @@ using Verse;
 
 namespace PresetFilteredZones;
 
-[HarmonyPatch(typeof(Building_Storage), "GetGizmos")]
-public class Building_Storage_Patch
+[HarmonyPatch(typeof(Zone_Stockpile), nameof(Zone_Stockpile.GetGizmos))]
+public class Zone_Stockpile_GetGizmos
 {
-    private static IEnumerable<Gizmo> Postfix(IEnumerable<Gizmo> values, Building_Storage __instance)
+    private static IEnumerable<Gizmo> Postfix(IEnumerable<Gizmo> values, Zone_Stockpile __instance)
     {
         foreach (var value in values)
         {
@@ -20,7 +20,7 @@ public class Building_Storage_Patch
             icon = Static.StockpileGizmo,
             defaultLabel = "FZN_GizmoPresetLabel".Translate(),
             defaultDesc = "FZN_GizmoPresetDesc".Translate(),
-            action = delegate { Static.SelectBuildingPreset(__instance); }
+            action = delegate { Static.SelectStockpilePreset(__instance); }
         };
         yield return selectPresetAction;
     }

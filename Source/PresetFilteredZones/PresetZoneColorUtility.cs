@@ -20,12 +20,12 @@ public static class PresetZoneColorUtility
     static PresetZoneColorUtility()
     {
         PaintMealZone();
-        PaintMedZone();
-        PaintMeatZone();
-        PaintVegZone();
-        PaintJoyZone();
-        PaintAnimalZone();
-        PaintOutdoorZone();
+        paintMedZone();
+        paintMeatZone();
+        paintVegZone();
+        paintJoyZone();
+        paintAnimalZone();
+        paintOutdoorZone();
     }
 
 
@@ -54,7 +54,7 @@ public static class PresetZoneColorUtility
     }
 
 
-    private static List<Color> Dilute(List<Color> palette)
+    private static List<Color> dilute(List<Color> palette)
     {
         var dilutedColors = new List<Color>();
         foreach (var color in palette)
@@ -69,7 +69,7 @@ public static class PresetZoneColorUtility
 
     private static void PaintMealZone()
     {
-        mealZonePalette = Dilute([
+        mealZonePalette = dilute([
             ColorLibrary.Purple,
             ColorLibrary.Violet,
             ColorLibrary.DeepPurple,
@@ -84,9 +84,9 @@ public static class PresetZoneColorUtility
     }
 
 
-    private static void PaintMedZone()
+    private static void paintMedZone()
     {
-        medZonePalette = Dilute([
+        medZonePalette = dilute([
             ColorLibrary.Blue,
             ColorLibrary.BabyBlue,
             ColorLibrary.Navy,
@@ -100,9 +100,9 @@ public static class PresetZoneColorUtility
     }
 
 
-    private static void PaintMeatZone()
+    private static void paintMeatZone()
     {
-        meatZonePalette = Dilute([
+        meatZonePalette = dilute([
             ColorLibrary.Red,
             ColorLibrary.Magenta,
             ColorLibrary.Burgundy,
@@ -118,9 +118,9 @@ public static class PresetZoneColorUtility
     }
 
 
-    private static void PaintVegZone()
+    private static void paintVegZone()
     {
-        vegZonePalette = Dilute([
+        vegZonePalette = dilute([
             ColorLibrary.Green,
             ColorLibrary.PastelGreen,
             ColorLibrary.PeaGreen,
@@ -133,9 +133,9 @@ public static class PresetZoneColorUtility
     }
 
 
-    private static void PaintJoyZone()
+    private static void paintJoyZone()
     {
-        joyZonePalette = Dilute([
+        joyZonePalette = dilute([
             ColorLibrary.Orange,
             ColorLibrary.Yellow,
             ColorLibrary.DarkOrange,
@@ -147,9 +147,9 @@ public static class PresetZoneColorUtility
     }
 
 
-    private static void PaintAnimalZone()
+    private static void paintAnimalZone()
     {
-        animalZonePalette = Dilute([
+        animalZonePalette = dilute([
             ColorLibrary.Brown,
             ColorLibrary.Leather,
             ColorLibrary.DarkBrown
@@ -157,7 +157,7 @@ public static class PresetZoneColorUtility
     }
 
 
-    private static void PaintOutdoorZone()
+    private static void paintOutdoorZone()
     {
         outdoorZonePalette = [];
         foreach (var color in mealZonePalette)
