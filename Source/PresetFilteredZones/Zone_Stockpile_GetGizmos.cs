@@ -6,9 +6,9 @@ using Verse;
 namespace PresetFilteredZones;
 
 [HarmonyPatch(typeof(Zone_Stockpile), nameof(Zone_Stockpile.GetGizmos))]
-public class Zone_Stockpile_GetGizmos
+public static class Zone_Stockpile_GetGizmos
 {
-    private static IEnumerable<Gizmo> Postfix(IEnumerable<Gizmo> values, Zone_Stockpile __instance)
+    public static IEnumerable<Gizmo> Postfix(IEnumerable<Gizmo> values, Zone_Stockpile __instance)
     {
         foreach (var value in values)
         {

@@ -76,9 +76,9 @@ public static class Static
         var fieldInfo = preset.GetType().GetField(preset.ToString());
 
         var attributes =
-            (DescriptionAttribute[])fieldInfo.GetCustomAttributes(typeof(DescriptionAttribute), false);
+            (DescriptionAttribute[])fieldInfo?.GetCustomAttributes(typeof(DescriptionAttribute), false);
 
-        return attributes.Length > 0 ? attributes[0].description.Translate() : preset.ToString().Translate();
+        return attributes is { Length: > 0 } ? attributes[0].description.Translate() : preset.ToString().Translate();
     }
 
     public static void SelectBuildingPreset(Building_Storage building)
@@ -110,12 +110,9 @@ public static class Static
     {
         if (!stockpileMenues.ContainsKey(stockpile))
         {
-            if (stockpile is Zone_Stockpile)
-            {
-            }
-
             var list = new List<FloatMenuOption>();
-            var regex = new Regex(@" (\d+)$", RegexOptions.Compiled | RegexOptions.CultureInvariant);
+            var regex = new Regex(@" (\d+)$", RegexOptions.Compiled | RegexOptions.CultureInvariant,
+                TimeSpan.FromMilliseconds(500));
 
             foreach (var preset in (PresetZoneType[])Enum.GetValues(typeof(PresetZoneType)))
             {
@@ -162,8 +159,6 @@ public static class Static
 
     public static ThingFilter SetFilterFromPreset(PresetZoneType preset)
     {
-        //List<ThingDef> database = DefDatabase<ThingDef>.AllDefsListForReading;
-
         switch (preset)
         {
             case PresetZoneType.Meal:

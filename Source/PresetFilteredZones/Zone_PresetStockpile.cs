@@ -11,8 +11,8 @@ public class Zone_PresetStockpile : Zone, ISlotGroupParent
     private static readonly ITab storageTab = new ITab_Storage();
 
     public StorageSettings Settings;
-    private SlotGroup slotGroup;
     public ThingFilter ThingFilter;
+    private SlotGroup slotGroup;
     private PresetZoneType zoneType;
 
 
@@ -129,17 +129,17 @@ public class Zone_PresetStockpile : Zone, ISlotGroupParent
     }
 
 
-    public override void AddCell(IntVec3 sq)
+    public override void AddCell(IntVec3 c)
     {
-        base.AddCell(sq);
-        slotGroup?.Notify_AddedCell(sq);
+        base.AddCell(c);
+        slotGroup?.Notify_AddedCell(c);
     }
 
 
-    public override void RemoveCell(IntVec3 sq)
+    public override void RemoveCell(IntVec3 c)
     {
-        base.RemoveCell(sq);
-        slotGroup.Notify_LostCell(sq);
+        base.RemoveCell(c);
+        slotGroup.Notify_LostCell(c);
     }
 
 

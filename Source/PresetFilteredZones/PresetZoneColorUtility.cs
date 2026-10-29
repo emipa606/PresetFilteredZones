@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using Verse;
 
@@ -160,10 +161,9 @@ public static class PresetZoneColorUtility
     private static void paintOutdoorZone()
     {
         outdoorZonePalette = [];
-        foreach (var color in mealZonePalette)
+        foreach (var grayscale in mealZonePalette.Select(c => c.grayscale))
         {
-            var v = color.grayscale;
-            outdoorZonePalette.Add(new Color(v, v, v, ZoneOpacity));
+            outdoorZonePalette.Add(new Color(grayscale, grayscale, grayscale, ZoneOpacity));
         }
     }
 }

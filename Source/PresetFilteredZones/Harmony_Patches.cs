@@ -5,7 +5,7 @@ using Verse;
 namespace PresetFilteredZones;
 
 [StaticConstructorOnStartup]
-internal class Harmony_Patches
+internal static class Harmony_Patches
 {
     static Harmony_Patches()
     {

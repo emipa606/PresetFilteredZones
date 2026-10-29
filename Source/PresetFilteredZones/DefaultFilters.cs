@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using RimWorld;
 using Verse;
 
@@ -142,12 +143,10 @@ public static class DefaultFilters
         var filter = new ThingFilter();
         filter.SetDisallowAll();
 
-        foreach (var thingDef in database)
+        foreach (var thingDef in database.Where(thingDef =>
+                     thingDef.GetStatValueAbstract(StatDefOf.DeteriorationRate) > 0))
         {
-            if (thingDef.GetStatValueAbstract(StatDefOf.DeteriorationRate) > 0)
-            {
-                filter.SetAllow(thingDef, true);
-            }
+            filter.SetAllow(thingDef, true);
         }
 
         filter.SetAllow(ThingCategoryDefOf.Corpses, false);
